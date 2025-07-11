@@ -1,5 +1,9 @@
 # VM Import from OVA
 
+> **⚠️ Experimental:** This utility is in active development and **not fully supported**. Use at your own risk and test thoroughly before deploying to production. It follows the logic from a Foreign VM Import
+
+> **⚠️ Video of Foreign Import** https://www.youtube.com/watch?v=IM00n89U3jw&feature=youtu.be
+
 A **Go** command-line tool that streamlines the end-to-end refresh and re-import of virtual-machine images exported from a **Scale Computing HC3** cluster as OVA files.  
 It automatically copies disk images, rewrites the `scale-metadata` XML, and queues the VM import through HC3’s REST API—turning a multi-step manual procedure into a single command.
 
@@ -24,7 +28,7 @@ It automatically copies disk images, rewrites the `scale-metadata` XML, and queu
   * exported OVA folder (`*.ovf`, `*.vmdk`, etc.)  
   * staging directory with Scale XML and disk UUID sub-folders  
 * Operating system with `qemu-img` if you plan to tweak disk conversion manually (script does not invoke it directly)
-
+* Exported OVA should be extracted into the `ovadir` and have a corresponding vm directory containing the template from Scale export
 ---
 
 ## 📂 Default Directory Layout
